@@ -1,0 +1,19 @@
+{
+  "name": "vlapma",
+  "version": "1.0.0",
+  "description": "Psychometric Analysis application for Vic Lawrence & Associates Limited",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/enJames/vlapma.git"
+  },
+  "author": "Enejo James Oche",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/enJames/vlapma/issues"
+  },
+  "homepage": "https://github.com/enJames/vlapma#readme"
+}
