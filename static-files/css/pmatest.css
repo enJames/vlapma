@@ -1,0 +1,85 @@
+.arc {
+    position: fixed;
+    background-color: rgba(99,43,141);
+    width: 1000px;
+    height: 150px;
+    transform: rotate(-9deg);
+    transition: 1s ease-in-out;
+}
+.top-arc {
+    left: 0;
+    margin: -100px 0 0 -40px;
+}
+.bottom-arc {
+    bottom: 0;
+    right: 0;
+    margin: 0 -40px -100px 0;
+}
+
+.main-content {
+    position: relative;
+    height: 100%;
+}
+.content-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50%;
+    transform: translate(-50%, -50%);
+}
+.content p {
+    font-family: 'Nunito', sans-serif;
+    font-size: 23px;
+    text-align: center;
+}
+.btn-div {
+    margin: 70px 0 -100px;
+    text-align: center;
+}
+button {
+    background: linear-gradient(to left, black 50%, rgb(99,43,141) 50%);
+    background-size: 200% 100%;
+    background-position: right;
+    padding: 15px 60px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 23px;
+    color: white;
+    cursor: pointer;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 2px 2px 10px 1px rgb(0,0,0,.8);
+    transition: .6s ease-in-out;
+}
+button:hover {
+    background-position: left;
+}
+
+@media screen and (max-width: 450px) {
+    .arc {
+        transform: rotate(-20deg);
+    }
+    .top-arc {
+        margin: -150px 0 0 -100px;
+    }
+    .bottom-arc {
+        margin: 0 -100px -150px 0;
+    }
+}
+
+@media screen and (max-width: 380px) {
+    .top-arc {
+        margin: -170px 0 0 -100px;
+    }
+    .bottom-arc {
+        margin: 0 -100px -170px 0;
+    }
+}
+
+@media screen and (max-width: 330px) {
+    .top-arc {
+        margin: -190px 0 0 -100px;
+    }
+    .bottom-arc {
+        margin: 0 -100px -190px 0;
+    }
+}
