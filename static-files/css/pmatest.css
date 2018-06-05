@@ -78,32 +78,39 @@ button:hover {
     }
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 768px) {
+    .content-wrapper {
+        width: 100%;
+        padding: 0 15px;
+    }
     .arc {
-        transform: rotate(-20deg);
+        transform: rotate(-11deg);
     }
     .top-arc {
-        margin: -150px 0 0 -100px;
+        margin: -300px 0 0 -600px;
     }
     .bottom-arc {
-        margin: 0 -100px -150px 0;
+        margin: 0 -600px -300px 0;
     }
 }
 
-@media screen and (max-width: 380px) {
+@media screen and (max-width: 550px) {
+    .arc {
+        transform: rotate(-12deg);
+    }
     .top-arc {
-        margin: -170px 0 0 -100px;
+        margin: -370px 0 0 -100px;
     }
     .bottom-arc {
-        margin: 0 -100px -170px 0;
+        margin: 0 -100px -370px 0;
     }
 }
 
-@media screen and (max-width: 330px) {
+@media screen and (max-width: 450px) {
     .top-arc {
-        margin: -190px 0 0 -100px;
+        margin: -320px 0 0 -100px;
     }
     .bottom-arc {
-        margin: 0 -100px -190px 0;
+        margin: 0 -100px -320px 0;
     }
 }
