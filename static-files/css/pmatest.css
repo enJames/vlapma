@@ -1,19 +1,19 @@
 .arc {
     position: fixed;
     background-color: rgba(99,43,141);
-    width: 1000px;
-    height: 150px;
+    width: 200%;
+    height: 49%;
     transform: rotate(-9deg);
     transition: 1s ease-in-out;
 }
 .top-arc {
     left: 0;
-    margin: -100px 0 0 -40px;
+    margin: -320px 0 0 -600px;
 }
 .bottom-arc {
     bottom: 0;
     right: 0;
-    margin: 0 -40px -100px 0;
+    margin: 0 -600px -320px 0;
 }
 
 .main-content {
@@ -52,6 +52,30 @@ button {
 }
 button:hover {
     background-position: left;
+}
+
+@media screen and (max-width: 1024px) {
+    .arc {
+        transform: rotate(-11deg);
+    }
+    .top-arc {
+        margin: -300px 0 0 -600px;
+    }
+    .bottom-arc {
+        margin: 0 -600px -300px 0;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .arc {
+        transform: rotate(-11deg);
+    }
+    .top-arc {
+        margin: -300px 0 0 -600px;
+    }
+    .bottom-arc {
+        margin: 0 -600px -300px 0;
+    }
 }
 
 @media screen and (max-width: 450px) {
