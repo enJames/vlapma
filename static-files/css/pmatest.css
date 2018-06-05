@@ -66,34 +66,19 @@ button:hover {
     }
 }
 
-@media screen and (max-width: 1024px) {
-    .arc {
-        transform: rotate(-11deg);
-    }
-    .top-arc {
-        margin: -400px 0 0 -600px;
-    }
-    .bottom-arc {
-        margin: 0 -600px -400px 0;
-    }
-}
-
 @media screen and (max-width: 992px) {
-    .arc {
-        transform: rotate(-11deg);
-    }
-    .top-arc {
-        margin: -300px 0 0 -600px;
-    }
-    .bottom-arc {
-        margin: 0 -600px -300px 0;
-    }
-}
-
-@media screen and (max-width: 768px) {
     .content-wrapper {
         width: 100%;
         padding: 0 15px;
+    }
+    .arc {
+        transform: rotate(-11deg);
+    }
+    .top-arc {
+        margin: -450px 0 0 -600px;
+    }
+    .bottom-arc {
+        margin: 0 -600px -450px 0;
     }
 }
 
