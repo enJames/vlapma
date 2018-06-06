@@ -1,21 +1,47 @@
-.arc {
-    position: fixed;
-    background-color: rgba(99,43,141);
-    width: 1000px;
-    height: 150px;
-    transform: rotate(-9deg);
+.skew-wrapper-top {
+    position: absolute;
+    top: 0;
+    z-index: 0;
+    width: 100%;
+    overflow: hidden;
     transition: 1s ease-in-out;
 }
-.top-arc {
-    left: 0;
-    margin: -100px 0 0 -40px;
+.skew-top {
+    border-style: solid;
+    height: 0;
+    border-color: transparent transparent transparent rgb(99,43,141);
+    border-width: 0 0 100px 900px;
 }
-.bottom-arc {
+.skew-wrapper-bottom {
+    position: absolute;
     bottom: 0;
-    right: 0;
-    margin: 0 -40px -100px 0;
+    z-index: 0;
+    width: 100%;
+    overflow: hidden;
+    transition: 1s ease-in-out;
+}
+.skew-bottom {
+    border-style: solid;
+    height: 0;
+    border-color: transparent rgb(99,43,141) transparent transparent;
+    border-width: 100px 900px 0 0;
 }
 
+#shutterTop {
+    position: absolute;
+    top: 0;
+}
+#shutterBottom {
+    position: absolute;
+    bottom: 0;
+
+}
+.shutter {
+    z-index: 999999;
+    width: 100%;
+    height: 0;
+    background-color: rgb(99,47,141);
+}
 .main-content {
     position: relative;
     height: 100%;
@@ -24,14 +50,102 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 50%;
+    width: 80%;
+    margin-top: -30px;
     transform: translate(-50%, -50%);
 }
-.content p {
+.description p {
+    width: 70%;
+    margin: auto;
     font-family: 'Nunito', sans-serif;
     font-size: 23px;
     text-align: center;
 }
+
+/* Form div */
+.form-div {
+    margin: 50px auto;
+}
+.form-div form {
+    position: relative;
+    height: 60px;
+}
+.question-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, -50%);
+    visibility: hidden;
+}
+/* visibility */
+.make-visible {
+    visibility: visible;
+}
+
+
+/* Radio button styling */
+.input-container {
+    display: inline-block;
+    position: relative;
+    margin-right: 50px;
+    padding-left: 35px;
+    cursor: pointer;
+    font-family: 'Nunito', sans-serif;
+    font-size: 23px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+/* Hide the browser's default checkbox */
+.input-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+/* Custom checkbox */
+.checkmark {
+    position: absolute;
+    top: 5px;
+    left: 0;
+    background: linear-gradient(to left, rgba(0,0,0,.7) 50%, rgba(99,43,141,.7) 50%);
+    background-size: 200% 100%;
+    background-position: right;
+    height: 25px;
+    width: 25px;
+    border-radius: 50px;
+    transition: .5s ease-in-out;
+}
+/* On mouse-over, add a grey background color */
+.input-container:hover input ~ .checkmark {
+    background-position: left;
+}
+/* When the checkbox is checked, add a blue background */
+.input-container input:checked ~ .checkmark {
+    background-color: black;
+}
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+/* Show the checkmark when checked */
+.input-container input:checked ~ .checkmark:after {
+    display: block;
+}
+/* Style the checkmark/indicator */
+.input-container .checkmark:after {
+    left: 5px;
+    top: 5px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: rgb(99,47,141);
+}
+
+/* Button */
 .btn-div {
     margin: 70px 0 -100px;
     text-align: center;
@@ -54,32 +168,50 @@ button:hover {
     background-position: left;
 }
 
-@media screen and (max-width: 450px) {
+
+
+@media screen and (max-width: 992px) {
+    .content-wrapper {
+        width: 100%;
+        padding: 0 15px;
+    }
+    .description p {
+        width: 90%;
+    }
+    .form-div form {
+        height: 150px;
+    }
+    .question-wrapper {
+        width: 200px;
+    }
+    .input-container {
+        display: block;
+        text-align: left;
+    }
+}
+
+@media screen and (max-width: 550px) {
     .arc {
-        transform: rotate(-20deg);
+        transform: rotate(-12deg);
     }
     .top-arc {
-        margin: -150px 0 0 -100px;
+        margin: -370px 0 0 -100px;
     }
     .bottom-arc {
-        margin: 0 -100px -150px 0;
+        margin: 0 -100px -370px 0;
     }
 }
 
-@media screen and (max-width: 380px) {
+@media screen and (max-width: 450px) {
     .top-arc {
-        margin: -170px 0 0 -100px;
+        margin: -350px 0 0 -100px;
     }
     .bottom-arc {
-        margin: 0 -100px -170px 0;
+        margin: 0 -100px -350px 0;
     }
-}
-
-@media screen and (max-width: 330px) {
-    .top-arc {
-        margin: -190px 0 0 -100px;
-    }
-    .bottom-arc {
-        margin: 0 -100px -190px 0;
+    button {
+        padding: 8px 30px;
+        font-size: 15px;
+        border-radius: 5px;
     }
 }

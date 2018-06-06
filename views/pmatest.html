@@ -13,21 +13,90 @@
         <title>Who Am I - Vic Lawrence & Associates Limited</title>
     </head>
     <body>
-        <div class="arc top-arc"></div>
-        <div class="arc bottom-arc"></div>
+        <div class="shutter" id="shutterTop"></div>
+        <div class="shutter" id="shutterBottom"></div>
+        <div class="skew-wrapper-top">
+            <div class="skew-top"></div>
+        </div>
+        <div class="skew-wrapper-bottom">
+            <div class="skew-bottom"></div>
+        </div>
         <div class="main-content">
             <div class="content-wrapper">
-                <div class="content">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-
+                <div class="description">
+                    <p><strong>Choose the option that best describes you. Don’t over think it; your first choice [gut instinct] is the best one.</strong></p>
                 </div>
-                <div class="btn-div">
-                    <button type="button" id="">Proceed</button>
+                <div class="form-div text-center my-5">
+                    <form method="POST">
+                        <div class="question-wrapper make-visible">
+                            <label class="input-container">Bold
+                                <input type="radio" class="ques1" name="ques1" value="1">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="input-container">Talkative
+                                <input type="radio" class="ques1" name="ques1" value="2">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="input-container">Sweet
+                                <input type="radio" class="ques1" name="ques1" value="3">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="input-container">Attentive
+                                <input type="radio" class="ques1" name="ques1" value="4">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                        <div class="question-wrapper">
+                            <label class="input-container">Direct
+                                <input type="radio" class="ques2" name="ques2" value="1">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="input-container">Persuasive
+                                <input type="radio" class="ques2" name="ques2" value="2">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="input-container">Cautious
+                                <input type="radio" class="ques2" name="ques2" value="3">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="input-container">Steady
+                                <input type="radio" class="ques2" name="ques2" value="4">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                        <div class="question-wrapper">
+                            <label class="input-container">Original
+                                <input type="radio" class="ques2" name="ques2" value="1">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="input-container">Charming
+                                <input type="radio" class="ques2" name="ques2" value="2">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="input-container">Flowing
+                                <input type="radio" class="ques2" name="ques2" value="3">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="input-container">Conservative
+                                <input type="radio" class="ques2" name="ques2" value="4">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                    </form>
+                </div>
+                <div class="row btn-div">
+                    <div class="col-6">
+                        <button type="button" id="back">Back</button>
+                    </div>
+                    <div class="col-6">
+                        <button type="button" id="next">Next</button>
+                    </div>
                 </div>
             </div>
         </div>
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="../static-files/js/animation.js"></script>
     </body>
 </html>
