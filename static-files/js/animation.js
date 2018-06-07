@@ -1,24 +1,10 @@
 $(document).ready(() => {
-    const questionNumber = 1;
-    $('#next').click(() => {
-        // Add height
-        $('#shutterTop').animate({ height: '51%' }, { duration: '1000'});
-        $('#shutterBottom').animate({ height: '51%' }, { duration: '1000'});
+    // Disable back button
+    disableBackButton();
 
-        setTimeout(() => {
-            $('#shutterTop').animate({ height: '0' }, { duration: '1000'});
-            $('#shutterBottom').animate({ height: '0' }, { duration: '1000'});
-        }, 800);
-    });
+    // Move to next question
+    $('#next').click(goToNextQuestion);
 
-    $('#back').click(() => {
-        // Add height
-        $('#shutterTop').animate({ height: '51%' }, { duration: '1000'});
-        $('#shutterBottom').animate({ height: '51%' }, { duration: '1000'});
-
-        setTimeout(() => {
-            $('#shutterTop').animate({ height: '0' }, { duration: '1000'});
-            $('#shutterBottom').animate({ height: '0' }, { duration: '1000'});
-        }, 800);
-    });
+    // Move to previous question
+    $('#back').click(goToPreviousQuestion);
 });
