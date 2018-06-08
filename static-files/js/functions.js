@@ -10,7 +10,6 @@ console.log((questionNumber + 1) + '/' + $('.question-wrapper').length);
 
 const goToNextQuestion = () => {
     questionNumber += 1;
-    console.log((questionNumber + 1) + '/' + $('.question-wrapper').length);
 
     // Close shutter
     shutter('51%');
@@ -18,6 +17,9 @@ const goToNextQuestion = () => {
     // Show next question after .35 second
     setTimeout(() => {
         showNextQuestion();
+        // Update question count
+        $('#questionCount').text(`${questionNumber + 1}
+            of ${$('.question-wrapper').length}`);
 
         if ($('#back').attr('disabled')) {
             enableBackButton()
@@ -35,7 +37,7 @@ const goToNextQuestion = () => {
 
 const goToPreviousQuestion = () => {
     questionNumber -= 1;
-    console.log((questionNumber + 1) + '/' + $('.question-wrapper').length);
+
 
     // Close shutter
     shutter('51%');
@@ -44,6 +46,8 @@ const goToPreviousQuestion = () => {
     setTimeout(() => {
         // Display the next question
         showPreviousQuestion();
+        $('#questionCount').text(`${questionNumber + 1}
+            of ${$('.question-wrapper').length}`);
 
         if (questionNumber === 0) {
             disableBackButton();
