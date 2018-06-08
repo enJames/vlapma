@@ -1,6 +1,9 @@
 a img {
     width: 100px;
 }
+nav div {
+    padding-top: 10px;
+}
 #username {
     color: rgb(99,47,141);
     font-size: 20px;
@@ -86,8 +89,6 @@ a img {
     visibility: hidden;
     animation-duration: .0001s;
 }
-
-
 
 /* Radio button styling */
 .input-container {
@@ -176,9 +177,10 @@ a img {
 }
 .pageInfo {
     position: absolute;
-    bottom: 0;
+    bottom: 10px;
     right: 20px;
     color: white;
+    font-size: 20px;
 }
 
 /* -------- Switching classes ------------ */
@@ -225,6 +227,48 @@ a img {
     }
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 768px) {
+    nav div {
+        padding-top: 30px;
+    }
+}
 
+@media screen and (max-width: 450px) {
+    nav div {
+        padding-top: 10px;
+    }
+    #username {
+        color: white;
+    }
+    .skew-bottom {
+        border-width: 150px 900px 0 0;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .form-div {
+        margin: 20px auto;
+    }
+    .description p {
+        width: 90%;
+        font-size: 18px;
+    }
+    .question-wrapper {
+        width: 60%;
+    }
+    .input-container {
+        font-size: 18px;
+    }
+    .btn-div {
+        margin: 30px auto -100px;
+    }
+    .actionButton, .disable {
+        width: 80px;
+        height: 40px;
+        font-size: 18px;
+    }
+    .pageInfo {
+        bottom: 5px;
+        font-size: 18px;
+    }
 }
