@@ -1,3 +1,30 @@
 body, html {
     height: 100%;
 }
+.dim {
+    position: absolute;
+    background-color: rgba(0, 0, 0,.8);
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: all .6s ease-in-out;
+}
+.message-wrapper {
+    position: relative;
+    height: 100%;
+
+}
+#message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0,0,0,.5);
+    font-size: 23px;
+    color: white;
+    padding: 25px;
+    border-radius: 5px;
+}
+#message a {
+    text-decoration: none;
+}
