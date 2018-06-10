@@ -103,7 +103,7 @@ const SendUserInfo = (url, data, element) => {
             /*
             element.html('Oops! There was a problem. Please <a href="file:///F:/Clients/VLA/app/views/introduction.html">try again</a
             */
-            location.href = "file:///F:/Clients/VLA/app/views/thankyou.html"
+            location.href = "https://enjames.github.io/vlapma/views/thankyou.html"
         }
         console.log(xhr);
     }
