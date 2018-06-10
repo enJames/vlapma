@@ -1,12 +1,4 @@
 let questionNumber = 0;
-console.log((questionNumber + 1) + '/' + $('.question-wrapper').length);
-
-
-    if (questionNumber === 0) {
-        $('#back').addClass('disable').attr('disabled', true);
-    } else {
-        $('#back').attr('disabled', false);
-    }
 
 const goToNextQuestion = () => {
     questionNumber += 1;
@@ -38,7 +30,6 @@ const goToNextQuestion = () => {
 const goToPreviousQuestion = () => {
     questionNumber -= 1;
 
-
     // Close shutter
     shutter('51%');
 
@@ -66,38 +57,58 @@ const goToPreviousQuestion = () => {
 const shutter = (value) => {
     $('#shutterTop').animate({ height: value }, { duration: '1000'});
     $('#shutterBottom').animate({ height: value }, { duration: '1000'});
-}
+};
 
 const showNextQuestion = () => {
     $('.question-wrapper').eq(questionNumber - 1).removeClass('make-visible');
     $('.question-wrapper').eq(questionNumber).addClass('make-visible');
-}
+};
 
 const showPreviousQuestion = () => {
     $('.question-wrapper').eq(questionNumber + 1).removeClass('make-visible');
     $('.question-wrapper').eq(questionNumber).addClass('make-visible');
-}
+};
 
 const disableBackButton = () => {
     $('#back')
     .removeClass('actionButton')
     .addClass('disable')
     .attr('disabled', true);
-}
+};
 
 const enableBackButton = () => {
     $('#back')
     .removeClass('disable')
     .addClass('actionButton')
     .removeAttr('disabled');
-}
+};
 
 const hideNextShowFinish = () => {
     $('#next').addClass('hideButton');
     $('#finish').removeClass('hideButton');
-}
+};
 
 const showNextHideFinish = () => {
     $('#next').removeClass('hideButton');
     $('#finish').addClass('hideButton');
+};
+
+const SendUserInfo = (url, data, element) => {
+    const xhr = new XMLHttpRequest();
+
+    xhr.onreadystatechange = () => {
+        if (xhr.readyState === 4 && xhr.status === 201) {
+            location.href = xhr.responseURL;
+        } else {
+            /*
+            element.html('Oops! There was a problem. Please <a href="file:///F:/Clients/VLA/app/views/introduction.html">try again</a
+            */
+            location.href = "file:///F:/Clients/VLA/app/views/thankyou.html"
+        }
+        console.log(xhr);
+    }
+
+    xhr.open('POST', url);
+    xhr.setRequestHeader('content-type', 'application/json')
+    xhr.send(JSON.stringify(data));
 }
