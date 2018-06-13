@@ -12,9 +12,5 @@ $(document).ready(() => {
     // Move to previous question
     $('#back').click(goToPreviousQuestion);
 
-    $('#finish').click(() => {
-        const pmaData = $('#pmatest').serializeArray();
-        console.log(pmaData);
-        SendUserInfo('localhost', pmaData, $('#message'));
-    })
+    $('#finish').click(submitTest);
 });

@@ -9,3 +9,25 @@
 .actionButton {
     width: 220px;
 }
+
+@media screen and (max-width: 768px) {
+    .actionButton {
+        width: 180px;
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .actionButton {
+        width: 140px;
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .actionButton {
+        width: 100px;
+        height: 40px;
+        font-size: 14px;
+    }
+}

@@ -1,30 +1,34 @@
 let questionNumber = 0;
 
 const goToNextQuestion = () => {
-    questionNumber += 1;
+    if (!$(`input[name=ques${questionNumber + 1}]:checked`).val()) {
+        displayMessage('Please make a selection');
+    } else {
+        questionNumber += 1;
 
-    // Close shutter
-    shutter('51%');
+        // Close shutter
+        shutter('51%');
 
-    // Show next question after .35 second
-    setTimeout(() => {
-        showNextQuestion();
-        // Update question count
-        $('#questionCount').text(`${questionNumber + 1}
-            of ${$('.question-wrapper').length}`);
+        // Show next question after .35 second
+        setTimeout(() => {
+            showNextQuestion();
+            // Update question count
+            $('#questionCount').text(`${questionNumber + 1}
+                of ${$('.question-wrapper').length}`);
 
-        if ($('#back').attr('disabled')) {
-            enableBackButton()
-        }
+            if ($('#back').attr('disabled')) {
+                enableBackButton()
+            }
 
-        // Display Next button when user is returning from the last page
-        if (questionNumber === ($('.question-wrapper').length - 1)) {
-            hideNextShowFinish();
-        }
+            // Display Next button when user is returning from the last page
+            if (questionNumber === ($('.question-wrapper').length - 1)) {
+                hideNextShowFinish();
+            }
 
-        // Shutter open after .8 second
-        setTimeout(() => shutter('0'), 500);
-    }, 350);
+            // Shutter open after .8 second
+            setTimeout(() => shutter('0'), 500);
+        }, 350);
+    }
 };
 
 const goToPreviousQuestion = () => {
@@ -52,6 +56,16 @@ const goToPreviousQuestion = () => {
         // Shutter open after .8 second
         setTimeout(() => shutter('0'), 500);
     }, 350);
+};
+
+const submitTest = () => {
+    if (!$(`input[name=ques${questionNumber + 1}]:checked`).val()) {
+        displayMessage('Please make a selection');
+    } else {
+        const pmaData = $('#pmatest').serializeArray();
+        console.log(pmaData);
+        SendUserInfo('localhost', pmaData, $('#message'));
+    }
 };
 
 const shutter = (value) => {
@@ -93,17 +107,28 @@ const showNextHideFinish = () => {
     $('#finish').addClass('hideButton');
 };
 
+const displayMessage = (message) => {
+    // Display message
+    $('#message').css('top', '25%').text(message);
+
+    // Take message off screen after 1.5 seconds
+    setTimeout(() => $('#message').css('top', '-20%'), 2000);
+};
+
 const SendUserInfo = (url, data, element) => {
     const xhr = new XMLHttpRequest();
 
     xhr.onreadystatechange = () => {
+        console.log(data[0].name);
         if (xhr.readyState === 4 && xhr.status === 201) {
             location.href = xhr.responseURL;
         } else {
-            /*
-            element.html('Oops! There was a problem. Please <a href="file:///F:/Clients/VLA/app/views/introduction.html">try again</a
-            */
-            location.href = "https://enjames.github.io/vlapma/views/thankyou.html"
+            if (data[0].name === 'firstname') {
+                location.href = 'file:///F:/Clients/VLA/app/views/pmatest.html';
+            } else {
+                location.href = 'file:///F:/Clients/VLA/app/views/thankyou.html';
+            }
+            // element.html('Oops! There was a problem. Please <a href="file:///F:/Clients/VLA/app/views/introduction.html">try again</a>'
         }
         console.log(xhr);
     }
