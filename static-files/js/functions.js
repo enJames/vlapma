@@ -58,6 +58,16 @@ const goToPreviousQuestion = () => {
     }, 350);
 };
 
+const submitTest = () => {
+    if (!$(`input[name=ques${questionNumber + 1}]:checked`).val()) {
+        displayMessage('Please make a selection');
+    } else {
+        const pmaData = $('#pmatest').serializeArray();
+        console.log(pmaData);
+        SendUserInfo('localhost', pmaData, $('#message'));
+    }
+};
+
 const shutter = (value) => {
     $('#shutterTop').animate({ height: value }, { duration: '1000'});
     $('#shutterBottom').animate({ height: value }, { duration: '1000'});
@@ -102,7 +112,7 @@ const displayMessage = (message) => {
     $('#message').css('top', '25%').text(message);
 
     // Take message off screen after 1.5 seconds
-    setTimeout(() => $('#message').css('top', '-25%'), 2000);
+    setTimeout(() => $('#message').css('top', '-20%'), 2000);
 };
 
 const SendUserInfo = (url, data, element) => {

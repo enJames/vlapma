@@ -52,16 +52,16 @@
 }
 #message {
     position: absolute;
-    top: -25%;
+    top: -20%;
     left: 50%;
     z-index: 1;
     transform: translate(-50%, -50%);
     background-color: rgb(100, 10, 0);
     color: white;
-    padding: 5px 5px;
+    padding: 5px;
     text-align: center;
     border-radius: 5px;
-    transition: all .5s ease-in-out;
+    transition: all 1s ease-in-out;
 }
 .content-wrapper {
     position: absolute;
