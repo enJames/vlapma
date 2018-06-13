@@ -73,6 +73,15 @@ nav div {
     outline: none;
 }
 
+footer {
+    background-color: black;
+    color: rgb(190,190,190);
+}
+footer .wrapper {
+    padding: 80px 0;
+}
+
+
 @media screen and (max-width: 450px) {
     #message {
         font-size: 15px;
