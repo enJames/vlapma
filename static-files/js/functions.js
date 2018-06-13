@@ -1,30 +1,34 @@
 let questionNumber = 0;
 
 const goToNextQuestion = () => {
-    questionNumber += 1;
+    if (!$(`input[name=ques${questionNumber + 1}]:checked`).val()) {
+        displayMessage('Please make a selection');
+    } else {
+        questionNumber += 1;
 
-    // Close shutter
-    shutter('51%');
+        // Close shutter
+        shutter('51%');
 
-    // Show next question after .35 second
-    setTimeout(() => {
-        showNextQuestion();
-        // Update question count
-        $('#questionCount').text(`${questionNumber + 1}
-            of ${$('.question-wrapper').length}`);
+        // Show next question after .35 second
+        setTimeout(() => {
+            showNextQuestion();
+            // Update question count
+            $('#questionCount').text(`${questionNumber + 1}
+                of ${$('.question-wrapper').length}`);
 
-        if ($('#back').attr('disabled')) {
-            enableBackButton()
-        }
+            if ($('#back').attr('disabled')) {
+                enableBackButton()
+            }
 
-        // Display Next button when user is returning from the last page
-        if (questionNumber === ($('.question-wrapper').length - 1)) {
-            hideNextShowFinish();
-        }
+            // Display Next button when user is returning from the last page
+            if (questionNumber === ($('.question-wrapper').length - 1)) {
+                hideNextShowFinish();
+            }
 
-        // Shutter open after .8 second
-        setTimeout(() => shutter('0'), 500);
-    }, 350);
+            // Shutter open after .8 second
+            setTimeout(() => shutter('0'), 500);
+        }, 350);
+    }
 };
 
 const goToPreviousQuestion = () => {
@@ -91,6 +95,14 @@ const hideNextShowFinish = () => {
 const showNextHideFinish = () => {
     $('#next').removeClass('hideButton');
     $('#finish').addClass('hideButton');
+};
+
+const displayMessage = (message) => {
+    // Display message
+    $('#message').css('top', '25%').text(message);
+
+    // Take message off screen after 1.5 seconds
+    setTimeout(() => $('#message').css('top', '-25%'), 2000);
 };
 
 const SendUserInfo = (url, data, element) => {
