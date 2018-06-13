@@ -44,9 +44,7 @@ footer .wrapper {
     .navbar-brand {
         position: static;
         display: block;
-    }
-    .navbar-nav {
-        
+        margin: auto;
     }
     .actionButton {
         width: 180px;
@@ -61,6 +59,13 @@ footer .wrapper {
     .actionButton {
         width: 140px;
         font-size: 15px;
+    }
+    h1 {
+        display: none;
+    }
+    .navbar-nav p {
+        display: block;
+        margin: auto!important;
     }
 }
 
