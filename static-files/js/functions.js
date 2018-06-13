@@ -128,9 +128,9 @@ const SendUserInfo = (url, data, element) => {
             location.href = xhr.responseURL;
         } else {
             if (data[0].name === 'firstname') {
-                location.href = 'file:///F:/Clients/VLA/app/views/pmatest.html';
+                location.href = 'https://enjames.github.io/vlapma/views/pmatest.html';
             } else {
-                location.href = 'file:///F:/Clients/VLA/app/views/thankyou.html';
+                location.href = 'https://enjames.github.io/vlapma/views/thankyou.html';
             }
             // element.html('Oops! There was a problem. Please <a href="file:///F:/Clients/VLA/app/views/introduction.html">try again</a>'
         }

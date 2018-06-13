@@ -59,3 +59,20 @@ form {
 #start {
     display: none;
 }
+
+@media screen and (max-width: 450px) {
+    .pmatest-intro {
+        font-size: 18px;
+    }
+    .user-intro {
+        width: 100%;
+    }
+    form {
+        font-size: 18px;
+    }
+    .form-control {
+        font-size: 18px;
+        height: 40px;
+        border-radius: 5px !important;
+    }
+}
