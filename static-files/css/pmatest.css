@@ -222,7 +222,7 @@
         color: white;
     }
     .description p {
-        width: 80%;
+        width: 90%;
         font-size: 18px;
     }
     #message {
@@ -230,8 +230,11 @@
         width: 200px;
     }
     .form-div {
-        margin: 30px auto 0;
+        margin: 10px auto 0;
         font-size: 18px;
+    }
+    .question-wrapper {
+        width: 60%;
     }
     .input-container {
         margin: 10px auto 0;
@@ -246,7 +249,7 @@
         width: 10px;
     }
     .btn-div {
-        margin: 30px 0 -70px;
+        margin: 20px 0 -100px;
     }
     .actionButton, .disable {
         width: 80px;
@@ -264,44 +267,6 @@
     }
     .skew-bottom {
         border: none;
-    }
-}
-
-
-@media screen and (max-width: 350px) {
-    .form-div {
-        margin: 20px auto;
-    }
-    .description p {
-        width: 90%;
-        font-size: 18px;
-    }
-    .question-wrapper {
-        width: 60%;
-    }
-    .input-container {
-        margin-right: 0;
-        font-size: 18px;
-    }
-    .checkmark {
-        height: 20px;
-        width: 20px;
-    }
-    .input-container .checkmark:after {
-        height: 10px;
-        width: 10px;
-    }
-    .btn-div {
-        margin: 30px auto -100px;
-    }
-    .actionButton, .disable {
-        width: 80px;
-        height: 40px;
-        font-size: 18px;
-    }
-    .pageInfo {
-        bottom: 5px;
-        font-size: 18px;
     }
 }
 
