@@ -62,6 +62,10 @@ const submitTest = () => {
     if (!$(`input[name=ques${questionNumber + 1}]:checked`).val()) {
         displayMessage('Please make a selection');
     } else {
+        $('.dim').css({
+            'z-index': '9999',
+            'opacity': '1'
+        });
         const pmaData = $('#pmatest').serializeArray();
         console.log(pmaData);
         SendUserInfo('localhost', pmaData, $('#message'));
@@ -109,10 +113,10 @@ const showNextHideFinish = () => {
 
 const displayMessage = (message) => {
     // Display message
-    $('#message').css('top', '25%').text(message);
+    $('#errorMessage').css('top', '25%').text(message);
 
     // Take message off screen after 1.5 seconds
-    setTimeout(() => $('#message').css('top', '-20%'), 2000);
+    setTimeout(() => $('#errorMessage').css('top', '-10%'), 2000);
 };
 
 const SendUserInfo = (url, data, element) => {
@@ -124,9 +128,9 @@ const SendUserInfo = (url, data, element) => {
             location.href = xhr.responseURL;
         } else {
             if (data[0].name === 'firstname') {
-                location.href = 'file:///F:/Clients/VLA/app/views/pmatest.html';
+                location.href = 'https://enjames.github.io/vlapma/views/pmatest.html';
             } else {
-                location.href = 'file:///F:/Clients/VLA/app/views/thankyou.html';
+                location.href = 'https://enjames.github.io/vlapma/views/thankyou.html';
             }
             // element.html('Oops! There was a problem. Please <a href="file:///F:/Clients/VLA/app/views/introduction.html">try again</a>'
         }
@@ -134,6 +138,6 @@ const SendUserInfo = (url, data, element) => {
     }
 
     xhr.open('POST', url);
-    xhr.setRequestHeader('content-type', 'application/json')
+    xhr.setRequestHeader('content-type', 'application/json');
     xhr.send(JSON.stringify(data));
 }
