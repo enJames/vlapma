@@ -10,13 +10,22 @@ $(document).ready(() => {
     });
 
     $('#start').click(() => {
-        $('.dim').css({
-            'z-index': '9999',
-            'opacity': '1'
-        });
-        const userDetails = $('#userDetails').serializeArray();
-        console.log(userDetails);
-        SendUserInfo('localhost', userDetails, $('#message'));
+        if (!$('#firstname').val()) {
+            displayMessage('First Name is required');
+        } else if (!$('#lastname').val()) {
+            displayMessage('Last Name is required');
+        } else if (!$('#email').val()) {
+            displayMessage('email is required');
+        } else {
+            $('.dim').css({
+                'z-index': '9999',
+                'opacity': '1'
+            });
+            const userDetails = $('#userDetails').serializeArray();
+            console.log(userDetails);
+            SendUserInfo('localhost', userDetails, $('#message'));
+        }
+
     });
 
 });
