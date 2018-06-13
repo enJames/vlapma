@@ -97,13 +97,16 @@ const SendUserInfo = (url, data, element) => {
     const xhr = new XMLHttpRequest();
 
     xhr.onreadystatechange = () => {
+        console.log(data[0].name);
         if (xhr.readyState === 4 && xhr.status === 201) {
             location.href = xhr.responseURL;
         } else {
-            /*
-            element.html('Oops! There was a problem. Please <a href="file:///F:/Clients/VLA/app/views/introduction.html">try again</a
-            */
-            location.href = "https://enjames.github.io/vlapma/views/thankyou.html"
+            if (data[0].name === 'firstname') {
+                location.href = 'file:///F:/Clients/VLA/app/views/pmatest.html';
+            } else {
+                location.href = 'file:///F:/Clients/VLA/app/views/thankyou.html';
+            }
+            // element.html('Oops! There was a problem. Please <a href="file:///F:/Clients/VLA/app/views/introduction.html">try again</a>'
         }
         console.log(xhr);
     }
