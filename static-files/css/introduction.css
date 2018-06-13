@@ -23,7 +23,7 @@ em {
 }
 .user-intro {
     position: absolute;
-    top: -400%;
+    top: -500%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 60%;
