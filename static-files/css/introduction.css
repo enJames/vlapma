@@ -16,6 +16,10 @@
     font-size: 23px;
     text-align: center;
     transition: all .7s ease-in-out;
+    -webkit-transition: all .7s ease-in-out;
+    -o-transition: all .7s ease-in-out;
+    -moz-transition: all .7s ease-in-out;
+    -ms-transition: all .7s ease-in-out;
 }
 em {
     font-family: 'Dancing Script', cursive;
@@ -28,6 +32,10 @@ em {
     transform: translate(-50%, -50%);
     width: 60%;
     transition: all .7s ease-in-out;
+    -webkit-transition: all .7s ease-in-out;
+    -o-transition: all .7s ease-in-out;
+    -moz-transition: all .7s ease-in-out;
+    -ms-transition: all .7s ease-in-out;
 }
 form {
     font-family: 'Nunito', sans-serif;
@@ -51,10 +59,18 @@ form {
     margin: 100px auto -200px;
     text-align: center;
     transition: all .6s ease-in-out;
+    -webkit-transition: all .6s ease-in-out;
+    -o-transition: all .6s ease-in-out;
+    -moz-transition: all .6s ease-in-out;
+    -ms-transition: all .6s ease-in-out;
 }
 .actionButton {
     width: 200px;
     transition: all .6s ease-in-out;
+    -webkit-transition: all .6s ease-in-out;
+    -o-transition: all .6s ease-in-out;
+    -moz-transition: all .6s ease-in-out;
+    -ms-transition: all .6s ease-in-out;
 }
 #start {
     display: none;

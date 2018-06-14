@@ -8,7 +8,11 @@
     z-index: 10;
     width: 100%;
     overflow: hidden;
-    transition: 1s ease-in-out;
+    transition: all 1s ease-in-out;
+    -webkit-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -ms-transition: all 1s ease-in-out;
 }
 .skew-top {
     border-style: solid;
@@ -22,7 +26,11 @@
     z-index: 4;
     width: 100%;
     overflow: hidden;
-    transition: 1s ease-in-out;
+    transition: all 1s ease-in-out;
+    -webkit-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -ms-transition: all 1s ease-in-out;
 }
 .skew-bottom {
     border-style: solid;
@@ -60,7 +68,15 @@
     padding: 5px;
     text-align: center;
     border-radius: 5px;
+    -webkit-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
     transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -ms-transition: all .5s ease-in-out;
 }
 .content-wrapper {
     position: absolute;
@@ -70,6 +86,10 @@
     width: 80%;
     margin-top: -30px;
     transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
 }
 .description p {
     width: 70%;
@@ -92,9 +112,13 @@
     top: 50%;
     left: 50%;
     width: 100%;
-    transform: translate(-50%, -50%);
     visibility: hidden;
-    animation-duration: .0001s;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+
 }
 
 /* Radio button styling */
@@ -106,10 +130,10 @@
     cursor: pointer;
     font-family: 'Nunito', sans-serif;
     font-size: 23px;
+    user-select: none;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
-    user-select: none;
 }
 /* Hide the browser's default checkbox */
 .input-container input {
@@ -126,7 +150,11 @@
     height: 25px;
     width: 25px;
     border-radius: 50px;
-    transition: .5s ease-in-out;
+    transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -ms-transition: all .5s ease-in-out;
 }
 /* On mouse-over, add a grey background color */
 .input-container:hover input ~ .checkmark {
