@@ -7,6 +7,9 @@ nav div {
 .navbar-nav {
     flex-direction: column !important;
 }
+.brand {
+    width: 100px;
+}
 .purple-bg {
     background-color: rgb(99,47,141);
 }
